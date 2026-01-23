@@ -35,3 +35,22 @@ blockquote{font-style:italic;color:#666;border-left:4px solid var(--accent);padd
     height: 90px;
   }
 }
+hero-image img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.materials-blog h3 {
+  margin-top: 2rem;
+  color: var(--accent);
+}
+
+.materials-blog ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.materials-blog li {
+  margin-bottom: 0.5rem;
+}
