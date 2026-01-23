@@ -35,9 +35,14 @@ blockquote{font-style:italic;color:#666;border-left:4px solid var(--accent);padd
     height: 90px;
   }
 }
-hero-image img {
-  max-height: 400px;
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .materials-blog h3 {
