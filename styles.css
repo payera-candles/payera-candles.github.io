@@ -73,3 +73,99 @@ blockquote{font-style:italic;color:#666;border-left:4px solid var(--accent);padd
 .materials-blog li {
   margin-bottom: 0.5rem;
 }
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  height: 500px;          /* ← adjust this to match your preferred hero height */
+  overflow: hidden;
+  background: var(--accent); /* fallback color during load */
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 400%;            /* 100% × 4 (3 slides + duplicate) */
+  animation: slideShow 24s infinite ease-in-out;   /* 24s = ~8s per image */
+}
+
+.slide {
+  flex: 0 0 25%;          /* each slide = 25% of total width (400%) */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide-1 { background-image: url('../images/candle1.jpg'); }
+.slide-2 { background-image: url('../images/candle2.png'); }
+.slide-3 { background-image: url('../images/candle3.png'); }
+
+/* Infinite loop animation */
+@keyframes slideShow {
+  0%    { transform: translateX(0); }
+  8%    { transform: translateX(0); }     /* hold slide 1 */
+  25%   { transform: translateX(-25%); }  /* move to slide 2 */
+  33%   { transform: translateX(-25%); }  /* hold slide 2 */
+  50%   { transform: translateX(-50%); }  /* move to slide 3 */
+  58%   { transform: translateX(-50%); }  /* hold slide 3 */
+  75%   { transform: translateX(-75%); }  /* move to duplicated slide 1 */
+  83%   { transform: translateX(-75%); }  /* hold */
+  100%  { transform: translateX(0); }     /* snap back to start (invisible jump) */
+}
+
+/* Overlay content (same as before, now positioned absolutely) */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);   /* semi-transparent overlay for readability */
+  z-index: 2;
+}
+
+.hero-content h2 {
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+}
+
+.hero-content p {
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make button stand out more if needed */
+.hero-content .btn {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.hero-content .btn:hover {
+  background: #c4a07f;
+  border-color: #c4a07f;
+}
+
+/* Responsive height adjustments */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 400px;
+  }
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 320px;
+  }
+}
