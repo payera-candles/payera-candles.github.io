@@ -7,7 +7,7 @@ body{margin:0;font-family:'Helvetica Neue',Arial,sans-serif;color:#333;backgroun
 nav a{margin-left:1rem;text-decoration:none;color:#444;}
 nav a.active{border-bottom:2px solid var(--accent);}
 .hero{background:var(--accent);color:#fff;text-align:center;padding:4rem 1rem;}
-.btn{display:inline-block;background:#fff;color:#333;border:1px solid #fff;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;margin-top:1rem;}
+.btn{display:inline-block;background:#fff;color:#fff;border:1px solid #fff;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;margin-top:1rem;}
 .btn:hover{background:#f3f3f3;}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
 .card{background:#fff;border-radius:8px;border:1px solid #eee;padding:1rem;text-align:center;}
