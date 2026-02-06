@@ -189,8 +189,8 @@ blockquote{font-style:italic;color:#666;border-left:4px solid var(--accent);padd
 }
 
 .whatsapp-btn {
-  background: white;      /* WhatsApp green */
-  color: #D4AF37;
+  background: #075E54;      /* WhatsApp green */
+  color: white;
   border: none;
   margin-top: 0.75rem;
   display: inline-block;
