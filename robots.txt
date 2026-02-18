@@ -1,1 +1,1 @@
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://payera-candles.github.io/sitemap.xml
