@@ -4,30 +4,20 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>PAYERA Candles – Handcrafted Luxury Soy Candles</title>
-  <meta name="description" content="Hand-poured, nature-inspired candles made from sustainable soy wax and essential oils. Crafted with love for calm and mindful living.">
+  <meta name="description" content="Hand-poured, nature-inspired candles made from sustainable soy wax and essential oils.">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/favicon_32x32.png" type="image/png" />
 </head>
-
 <body>
   <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand">
-        <img src="images/logo.png" alt="Payera Candles" class="logo">
-      </a>
-
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><img src="images/logo.png" alt="Payera Candles" class="logo"></a>
       <nav class="main-nav">
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+        <input id="nav-toggle" class="nav-toggle" type="checkbox">
+        <label for="nav-toggle" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
         <ul class="nav-menu">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="products.html">Products</a></li>
@@ -39,62 +29,57 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-slider">
+    <section class="hero-slider container" aria-hidden="false">
       <div class="slides">
-        <img src="images/scentedcandles.jpg" alt="Payera Scented Candles" class="slide-img active" loading="lazy">
-        <img src="images/candle2.png" alt="Payera Exclusive Candle" class="slide-img" loading="lazy">
-        <img src="images/candle3.png" alt="Payera Ritual Candle" class="slide-img" loading="lazy">
+        <img class="slide-img active" src="images/scentedcandles.jpg" alt="Payera candles" loading="lazy">
+        <img class="slide-img" src="images/candle2.png" alt="Payera candle product" loading="lazy">
+        <img class="slide-img" src="images/candle3.png" alt="Payera ritual candle" loading="lazy">
       </div>
 
-      <div class="hero-content container">
-        <h2>Hand-poured candles inspired by nature’s calm</h2>
-        <p>Crafted in small batches from natural soy wax and pure essential oils — designed to bring warmth and mindfulness to your space.</p>
-        <a class="btn" href="products.html">Shop Collection</a>
+      <div class="hero-content">
+        <div class="inner">
+          <h1>Hand-poured candles inspired by nature’s calm</h1>
+          <p>Crafted in small batches from natural soy wax and pure essential oils — designed to bring warmth and mindfulness to your space.</p>
+          <a class="btn" href="products.html">Shop Collection</a>
+        </div>
       </div>
     </section>
 
-    <!-- Categories -->
-    <section class="featured container">
-      <h3>Our Collections</h3>
+    <section class="container">
+      <h2 style="font-family:'Playfair Display',serif;margin-top:1.6rem">Our Collections</h2>
       <div class="grid">
         <article class="card">
           <img src="images/candle1.png" alt="Rituals & Prayers">
-          <h4>Rituals &amp; Prayers</h4>
-          <p>Unwind. Reconnect. Breathe.</p>
+          <h3>Rituals &amp; Prayers</h3>
+          <p class="small">Unwind. Reconnect. Breathe.</p>
         </article>
         <article class="card">
-          <img src="images/candle2.png" alt="Gifting & Home Decor">
-          <h4>Gifting &amp; Home Decor</h4>
-          <p>Warm, refreshing, and comforting — a timeless favorite.</p>
+          <img src="images/candle2.png" alt="Gifting">
+          <h3>Gifting &amp; Home Decor</h3>
+          <p class="small">Warm, refreshing, and comforting — a timeless favorite.</p>
         </article>
         <article class="card">
-          <img src="images/candle3.png" alt="Our Exclusives">
-          <h4>Our Exclusives</h4>
-          <p>For those who believe in authenticity and quiet luxury.</p>
+          <img src="images/candle3.png" alt="Exclusives">
+          <h3>Our Exclusives</h3>
+          <p class="small">For those who believe in quiet, authentic luxury.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> PAYERA • Crafted with love</p>
-    </div>
+    <div class="container"><p>© <span id="year"></span> PAYERA • Crafted with love</p></div>
   </footer>
 
   <script>
-    // Auto year update
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Hero fade slider
-    const images = document.querySelectorAll('.slide-img');
+    const slides = document.querySelectorAll('.slide-img');
     let current = 0;
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 7000);
+    setInterval(()=> {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    },7000);
   </script>
 </body>
 </html>
