@@ -1,59 +1,62 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Payera Candles - Contact</title><link rel="stylesheet" href="styles.css"><link rel="icon" href="/favicon_32x32.png" type="image/png" /></head>
-<body><header class="site-header"><div class="container"> <a href="index.html" class="brand">
-      <img src="images/logo.png" alt="Payera – Hand-poured Soy Candles" class="logo">
-    </a><nav class="main-nav">
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-  <ul class="nav-menu">
-    <li><a href="index.html" >Home</a></li>
-    <li><a href="products.html" >Products</a></li>
-    <li><a href="about.html" >About</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-  </ul>
-</nav></div></header>
-<main class="container"><h2>Get in Touch</h2><p>We’d love to hear from you! For queries on bulk orders and customized gifts, please chat directly on <a href="https://wa.me/919036864225?text=I'm%20interested%20in%20ordering%20the%20Citrus%20%26%20Sage%20candle.%20Please%20share%20payment%20%26%20delivery%20details."
-           class="btn whatsapp-btn" target="_blank">WhatsApp</a> </p>
-      <p>For any other queries, feedback, or complaints - please fill the form below.</p>
-<!-- Replace your current <form> with this -->
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PAYERA Candles — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><img src="images/logo.png" alt="Payera" class="logo"></a>
+      <nav class="main-nav">
+        <input id="nav-toggle" class="nav-toggle" type="checkbox">
+        <label for="nav-toggle" class="hamburger" aria-hidden="true"><span></span><span></span><span></span></label>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+  <main class="contact-section container">
+    <h2>Get in touch</h2>
+    <p class="intro">We’d love to hear from you! For bulk or customised orders, reach us directly on <a class="whatsapp-btn" href="https://wa.me/919036864225">WhatsApp</a>. For other queries, feedback, or collaborations — please fill the form below.</p>
 
-  <!-- Hidden field – paste your access key here -->
-  <input type="hidden" name="access_key" value="035fd695-8f64-44fb-80a2-ccdd5c62c70a">
+    <div class="contact-wrapper">
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="035fd695-8f64-44fb-80a2-ccdd5c62c70a">
+        <input type="hidden" name="subject" value="Contact from Payera site">
+        <input type="text" name="_gotcha" style="display:none">
 
-  <!-- Optional: give your form a name (shows in email subject) -->
-  <input type="hidden" name="subject" value="New Contact from Payera Website">
+        <label for="name">Name</label>
+        <input id="name" name="name" placeholder="Your name" required>
 
-  <!-- Optional: redirect after submit -->
-  <input type="hidden" name="redirect" value="https://yourdomain.com/thank-you.html">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required>
 
-  <!-- Optional: simple anti-spam (honeypot) -->
-  <input type="text" name="_gotcha" style="display:none">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about your enquiry..." required></textarea>
 
-  <label>Name
-    <input type="text" name="name" required>
-  </label>
+        <button type="submit" class="btn">Send message</button>
+      </form>
 
-  <label>Email
-    <input type="email" name="email" required>
-  </label>
+      <aside class="contact-info">
+        <h4>Reach us directly</h4>
+        <p><strong>Email:</strong> <a href="mailto:payera.sop@gmail.com">payera.sop@gmail.com</a></p>
+        <p class="small">Follow us for updates and candle stories:</p>
+        <div class="socials small"><a href="#">Instagram</a> | <a href="#">Facebook</a></div>
+      </aside>
+    </div>
 
-  <label>Message
-    <textarea name="message" rows="5" required></textarea>
-  </label>
+    <p class="small" style="margin-top:1.25rem">Or email us directly: <a href="mailto:payera.sop@gmail.com">payera.sop@gmail.com</a></p>
+  </main>
 
-  <button type="submit" class="btn">Send Message</button>
-</form>
-
-<!-- Keep your fallback email link -->
-
-<p>Or email us directly: <a href="mailto:hello@payera.sop@gmail.com">payera.sop@gmail.com</a></p></main>
-<footer class="site-footer"><div class="container"><p>© <span id="year"></span> Payera </p></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script></body></html>
+  <footer class="site-footer"><div class="container"><p>© <span id="year"></span> PAYERA</p></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
