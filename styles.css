@@ -1,130 +1,104 @@
-:root {--max: 960px;--accent: #dcbfa6;--bg: #fdfbf9;}
-*{box-sizing:border-box;}
-body{margin:0;font-family:'Helvetica Neue',Arial,sans-serif;color:#333;background:var(--bg);line-height:1.6;}
-.container{max-width:var(--max);margin:0 auto;padding:1rem;}
-.site-header{background:#fff;border-bottom:1px solid #eee;padding: 0.1rem 0;position: sticky;
+:root {
+  --max: 960px;
+  --accent: #D4AF37;
+  --bg: #FDFBF9;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
+
+/* Header */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0.1rem 0;
+  position: sticky;
   top: 0;
-  z-index: 1000;           /* Keeps it above other content */
-  width: 100%;}
-.brand{font-size:1.5rem;font-weight:bold;color:#333;}
-nav a{margin-left:1rem;text-decoration:none;color:#444;}
-nav a.active{border-bottom:2px solid var(--accent);}
-.hero{background:var(--accent);color:#fff;text-align:center;padding:4rem 1rem;}
-.btn {
-  display: inline-block;
-  background: #fff;                /* white background */
-  color: #D4AF37;                  /* golden text – classic luxury gold */
-  border: 1px solid #D4AF37;       /* golden border to match text */
-  padding: 0.7rem 1.8rem;          /* slightly taller for premium feel */
-  border-radius: 999px;            /* pill shape – elegant & modern */
-  text-decoration: none;
-  font-weight: 500;                /* semi-bold for better readability */
-  transition: all 0.25s ease;
-  min-width: 140px;                /* prevents it from shrinking too much */
-  text-align: center;
+  z-index: 1000;
+  width: 100%;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.brand img.logo {
+  height: 120px;
+  width: auto;
+  max-width: 250px;
+}
+
+/* Navigation */
+.nav-toggle { display: none; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
 }
-
-.btn:hover {
-  background: #fffdf9;             /* very subtle off-white hover */
-  color: #c4a02f;                  /* slightly darker gold on hover */
-  border-color: #c4a02f;
-  transform: translateY(-1px);     /* tiny lift effect – feels premium */
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.18);  /* soft golden glow */
+.hamburger span {
+  background: #333;
+  height: 3px;
+  border-radius: 2px;
+  transition: all 0.35s ease;
 }
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;}
-.card{background:#fff;border-radius:8px;border:1px solid #eee;padding:1rem;text-align:center;}
-.card img{width:100%;height:300px;object-fit:cover;border-radius:8px;transition: transform 0.3s ease;}
-blockquote{font-style:italic;color:#666;border-left:4px solid var(--accent);padding-left:1rem;margin:1.5rem 0;}
-.contact-form{display:grid;gap:.75rem;max-width:500px;}
-.contact-form input,.contact-form textarea{width:100%;padding:.5rem;border:1px solid #ccc;border-radius:4px;}
-.site-footer{text-align:center;padding:1rem;font-size:.9rem;color:#666;border-top:1px solid #eee;}
-/* Logo styling */
-.brand {
-  display: inline-block;
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-menu li a {
   text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s;
 }
-.grid .card:hover img {
-  transform: scale(1.05);       /* Subtle zoom on hover – feels premium */
-}
-
-.logo {
-  height: 150px;          /* Adjust this value to fit your header nicely */
-  width: auto;           /* Keeps aspect ratio */
-  vertical-align: middle;
-  max-width: 300px;      /* Prevents it from getting too wide on large screens */
-}
-
-/* Optional: make it look better on mobile */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .logo {
-    height: 80px;
-    margin-bottom: 0.5rem;
-  }
-  
-  nav a {
-    font-size: 1.1rem;
-    margin: 0 0.8rem;
-  }
-}
-.hero-image img {
-  width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  display: block;
-}
-
-.materials-blog h3 {
-  margin-top: 2rem;
+.nav-menu li a:hover,
+.nav-menu li a.active {
   color: var(--accent);
+  border-bottom: 2px solid var(--accent);
 }
 
-.materials-blog ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin: 1rem 0;
-}
-
-.materials-blog li {
-  margin-bottom: 0.5rem;
-}
-/* Hero Slider */
+/* Hero Section */
 .hero-slider {
   position: relative;
-  height: 500px;
+  height: 95vh;
   overflow: hidden;
-  background: var(--accent);
+  background: var(--bg);
 }
-
 .slides {
   position: absolute;
   inset: 0;
 }
-
 .slide-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
 }
-
 .slide-img.active {
   opacity: 1;
 }
-
-/* Remove the old animation keyframes entirely for now – or keep very simple fade */
-/* Overlay content (same as before, now positioned absolutely) */
 .hero-content {
   position: absolute;
   inset: 0;
@@ -132,205 +106,110 @@ blockquote{font-style:italic;color:#666;border-left:4px solid var(--accent);padd
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.35);   /* semi-transparent overlay for readability */
+  background: rgba(255,255,255,0.3);
+  color: #3E2C00;
   z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+  animation-delay: 0.5s;
 }
-
 .hero-content h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
   margin: 0 0 1rem;
-  font-size: 2.5rem;
 }
-
 .hero-content p {
+  font-size: 1.1rem;
+  color: #5A4B2D;
   margin: 0 0 1.5rem;
-  font-size: 1.3rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Make button stand out more if needed */
-.hero-content .btn {
-  background: #fff;
-  color: #D4AF37;
-  border-color: var(--accent);
-  padding: 0.7rem 2rem;        /* taller but narrower feel */
-  border-radius: 999px;
-  min-width: 140px;            /* forces it to stay slim */
-  font-weight: 500;
-}
-
-.hero-content .btn:hover {
-  background: #fff;
-  border-color: #D4AF37;
-}
-
-/* Responsive height adjustments */
-@media (max-width: 768px) {
-  .hero-slider {
-    height: 400px;
-  }
-  .hero-content h2 {
-    font-size: 2rem;
-  }
-  .hero-content p {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-slider {
-    height: 320px;
-  }
-}
-/* Product card enhancements */
-.stock-status {
-  font-weight: bold;
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-}
-
-.in-stock {
-  color: #4CAF50; /* green */
-}
-
-.out-of-stock {
-  color: #f44336; /* red */
-}
-
-.whatsapp-btn {
-  background: #075E54;      /* WhatsApp green */
-  color: white;
-  border: none;
-  margin-top: 0.75rem;
+/* Button */
+.btn {
   display: inline-block;
-}
-
-.whatsapp-btn:hover {
-  background: #D4AF37;
-}
-
-.whatsapp-btn.disabled {
-  background: #aaa;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-/* ───────────────────────────────────────────────
-   Responsive Hamburger Navigation
-   ─────────────────────────────────────────────── */
-
-/* Hide checkbox */
-.nav-toggle {
-  display: none;
-}
-
-/* Hamburger icon styling */
-.hamburger {
-  display: none;                    /* hidden on desktop */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.hamburger span {
-  background: #333;
-  height: 3px;
-  border-radius: 2px;
-  transition: all 0.35s ease;
-}
-
-.nav-toggle:checked + .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
-}
-
-.nav-toggle:checked + .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle:checked + .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-/* Menu list */
-.nav-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 2rem;                        /* desktop spacing between links */
-}
-
-.nav-menu li a {
-  color: #444;
+  background: linear-gradient(90deg, #D4AF37, #C9A028);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: all 0.25s ease;
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.4rem 0;
-  transition: color 0.2s;
+}
+.btn:hover {
+  background: linear-gradient(90deg, #C9A028, #B88F22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(212,175,55,0.25);
 }
 
-.nav-menu li a:hover,
-.nav-menu li a.active {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
-/* Mobile behavior */
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #eee;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
+  .hero-slider { height: 80vh; }
+  .hero-content h2 { font-size: 1.8rem; }
+  .hero-content p { font-size: 1rem; }
+  .hamburger { display: flex; }
   .nav-menu {
-    display: none;                  /* hidden by default on mobile */
+    display: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
     background: white;
     flex-direction: column;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     border-top: 1px solid #eee;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-    z-index: 9;
   }
-
-  .nav-toggle:checked ~ .nav-menu {
-    display: flex;
-  }
-
-  .nav-menu li {
-    margin: 1rem 0;
-    text-align: center;
-  }
-
+  .nav-toggle:checked ~ .nav-menu { display: flex; }
   .nav-menu li a {
-    font-size: 1.25rem;
-    padding: 0.8rem;
-    display: block;
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
   }
-
-  /* Make header layout work with logo + hamburger */
-  .site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-
-  .brand {
-    margin: 0;
+  .brand img.logo {
+    height: 80px;
   }
 }
-<script>
-  const images = document.querySelectorAll('.slide-img');
-  let current = 0;
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-  }, 8000);
-</script>
